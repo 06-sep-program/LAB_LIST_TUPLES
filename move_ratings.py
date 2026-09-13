@@ -14,9 +14,9 @@ for movie in movies:
     if ratings:
         movie_rating= sum(ratings) / (len(ratings))
         if movie_rating >= 6:
-            movie_ratings.append((title, f"{movie_rating:.2f}"))
+            movie_ratings.append((movie_rating, title, release_year))
 
-movie_ratings.sort(reverse=True)
-for title, movie_rating in movie_ratings:
-    print(f"{title} ({release_year}) - Average Rating: {movie_rating} ★")            
+movie_ratings.sort(key=lambda movie: -movie[0])
+for order, (movie_rating, title, release_year) in enumerate(movie_ratings, start=1):
+    print(f"{order}. {title} ({release_year}) - Average Rating: {movie_rating:.2f} ★")       
 
