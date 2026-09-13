@@ -16,6 +16,7 @@ for movie in movies:
         if movie_rating >= 6:
             movie_ratings.append((title, f"{movie_rating:.2f}"))
 
+movie_ratings.sort(reverse=True)
 for title, movie_rating in movie_ratings:
     print(f"{title} ({release_year}) - Average Rating: {movie_rating} ★")            
 
