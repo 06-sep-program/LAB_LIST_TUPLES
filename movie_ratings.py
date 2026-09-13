@@ -14,6 +14,7 @@ def calcRatings(movies):
         rated_movies.append((title, year, average))
 
     rated_movies = [movie for movie in rated_movies if movie[2] >= 6.0]
+    rated_movies.sort(key=lambda movie: movie[2], reverse=True)
 
     for i, (title, year, average) in enumerate(rated_movies, start=1):
         print(f"{i}. {title} ({year}) - Avergae rating: {average:.2f} ★")
